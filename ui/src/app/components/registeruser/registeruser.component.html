@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div class=" panel panel-primary">
+        <div class="panel-heading">Registration</div>
+        <div class="panel-body">
+          <form (ngSubmit)="onSubmitRegistration()" #userForm="ngForm">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-5">
+                  <label for="firstName">First Name</label>
+                  <input ngModel minlength="4" required (change)="log(firstName)" type="text" [(ngModel)]="first_name" class="form-control" id="firstName" name="firstName" placeholder="Abc" #firstName="ngModel">
+                  <div *ngIf="firstName.touched && !firstName.valid" class="alert alert-danger">
+                    <div *ngIf="firstName.errors.minlength" > Name should be minimum 4 characters. </div>
+                    <div *ngIf="firstName.errors.required" > Name is required. </div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <label for="lastname">Last Name</label>
+                  <input type="text" [(ngModel)]="last_name" class="form-control" id="lastname" name="lastname" placeholder="Xyz">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <label for="username">Username</label>
+                  <input type="text" [(ngModel)]="user_name" class="form-control" id="username" name="username" placeholder="name@example.com">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <label for="passsword">Password</label>
+                  <input type="password" [(ngModel)]="password" class="form-control" id="password" name="password" placeholder="******">
+                </div>
+              </div>
+              <div class="row pull-right">
+                <div class="col-md-6">
+                  <input type="submit" class="btn" value="Register">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-4">
+      <div class=" panel panel-primary">
+        <div class="panel-heading">Login</div>
+        <div class="panel-body">
+          <form action="">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control form-control-sm" id="username" placeholder="name@example.com">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="passsword">Password</label>
+                  <input type="password" class="form-control form-control-sm" id="password" placeholder="******">
+                </div>
+              </div>
+              <br>
+              <div class="row pull-right">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
